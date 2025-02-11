@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/default.min.css">
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js"></script>
+
+    
+    <!-- and it's easy to individually load additional languages -->
+    <!-- <script src="https://cdn.bytedance.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script> -->
+
+</head>
+<body>
+    <!-- <div class="theme-switcher">
+        <button id="loginButton" onclick="login()">登录</button>
+        <select id="themeSelect">
+            <option value="0">全部</option>
+            <option value="3">运行中</option>
+        </select>
+    </div> -->
+
+    <!-- <div id="sidebar">
+        <h2>选择类型</h2>
+        <button id="serversButton" onclick="setType('servers')" class="active">服务器</button>
+        <button id="pluginButton" onclick="setType('plugin')">插件</button>
+        <button id="manual-download" onclick="window.location.href='https://example.com'">手动下载/上传</button>
+        
+    </div> -->
+    <div id="main-content">
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="搜索整合包">
+            <div id="layout-selector">
+                <select id="layoutSelect" onchange="changeLayout()">
+                    <option value="default">默认排序</option>
+                    <option value="initialLetter">首字母A-Z</option>
+                    <option value="overallRating">综合评分</option>
+                </select>
+            </div>
+            <button id="search-button" onclick="search()">搜索</button>
+            <button id="search-button" onclick="fetchContent()">重置</button>
+        </div>
+        <div id="content"></div>
+        <div id="pagination"></div>
+    </div>
+    <div id="modal">
+        <button id="back-button" onclick="closeModal()">🔙</button>
+        <div class="modal-content">
+            <div id="modal-content"></div>
+        </div>
+    </div>
+    <div id="loading">加载中...</div>
+    <div id="csv"></div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked-custom-heading-id/lib/index.umd.js"></script> -->
+    <script src="./lib/marked.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/common.js"></script>
+</body>
+</html>
