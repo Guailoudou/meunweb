@@ -101,7 +101,7 @@ async function getcsv(texturl){
             throw new Error('Network response was not ok'); 
         }
     const text = await response.text();
-    return csvToArray(text,9,"整合包名称（必填）");
+    return csvToArray(text,7,"整合包名称（必填）");
 }
 function getscores(title){
     // data.then(function(data){
