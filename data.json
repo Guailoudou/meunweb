@@ -1,19 +1,61 @@
 {
-    "datas":[
-        {
-            "title": "z宝藏猎人2",
-            "imgurl": "https://www.baidu.com/img/bd_logo1.png",
-            "description": "这是描述内容"
-        },
+    "datas": [
         {
             "title": "宝藏猎人3",
-            "imgurl": "https://www.baidu.com/img/bd_logo1.png",
-            "description": "这是描述内容"
-        },
-        {
-            "title": "测试的",
-            "imgurl": "https://www.baidu.com/img/bd_logo1.png",
-            "description": "这是描述内容"
+            "javaServer": "1.18.2",
+            "label": [
+                "科技",
+                "魔法",
+                "冒险"
+            ],
+            "imgurl": "./image/modPack/宝藏猎人3.jpg",
+            "modpackUrl": [
+                {
+                    "urlName": "mcmod",
+                    "url": "https://www.mcmod.cn/modpack/639.html"
+                },
+                {
+                    "urlName": "curseforge",
+                    "url": "https://www.curseforge.com/minecraft/modpacks/vault-hunters-1-18-2"
+                }
+            ],
+            "description": "是一个基于角色扮演的整合包。它具有许多宝藏猎人特定的物品，如盔甲、武器、货币、资源等，以及定制的怪物和 BOSS。玩家可以发展自己的天赋和技能，同时努力收集全部 25 件独特文物，以解锁最终的挑战！"
+        },{
+            "title": "机械动力.星辰",
+            "javaServer": "1.18.2",
+            "label": ["科技"],
+            "imgurl": "./image/modPack/机械动力.星辰.jpg",
+            "modpackUrl": [
+                {
+                    "urlName": "mcmod",
+                    "url": "https://www.mcmod.cn/modpack/510.html"
+                }
+            ],
+            "description": "机械动力：星辰（旧称机动星系）以机械动力为基础，添加了与多个模组的拓展性联动内容。任务日志将引导玩家的进度顺序，并提示配方的主要变动，然而，该整合包仍可以以玩家偏爱的方式游玩，完成主进度线并不需要进行杂项任务。"
+        },{
+            "title": "机械动力.奥术工程",
+            "javaServer": "1.18.2",
+            "label": ["科技"],
+            "imgurl": "./image/modPack/机械动力.奥术工程.jpg",
+            "modpackUrl": [
+                {
+                    "urlName": "mcmod",
+                    "url": "https://www.mcmod.cn/modpack/701.html"
+                }
+            ],
+            "description": "终极目标:征服奥术(不过一旦你把整合包里所有章节内容都完成了自动化，这个词的含义就会拨云见日)包含的自动化章节:14 章(含额外章节)魔法如何被整合进去:这些章节主要分为两条线，一条魔法线，一条科技线。其中的大部分内容都可以独立完成自动化，但是在游戏终未期，需要结合这两者最小内存要求:建议使用 8GB 以获得最佳体验。如果你计划在服务器上玩，那客户端使用 4G8 也可以，但会导致突然卡顿，并有可能会造成客户端崩溃。为什么选择这个整合:作者在这个整合上呕心沥加，精益求精，为了保证整合包质量，作者遍历了加入的大多数 M0d，并试图将其耦合在一起，甚至还为此添加了一些独有的独待机制。整合包完成度;作者已经对整合包的第一部分进行了全面规试，结果令人满意，但作者预计仍会有一些初始Bu0，目前，启动时会遇到一个半罕见的崩溃，应该很快就能得到修复，如果你遇到了，重新启动游戏，这个崩溃问题应该不会再发生。"
+        },{
+            "title": "机械动力.永无止境",
+            "javaServer": "1.16.5",
+            "label": ["科技"],
+            "imgurl": "./image/modPack/机械动力.永无止境.jpg",
+            "modpackUrl": [
+                {
+                    "urlName": "mcmod",
+                    "url": "https://www.mcmod.cn/modpack/312.html"
+                }
+            ],
+            "description": "厌倦了重复劳动？从各种差事或你选择的职业中挣得硬币。自动化交易过程，或是召集其他玩家帮你完成任务。之后你能从市场中买到各种资源、珍品和建筑方块。"
         }
     ]
 }
