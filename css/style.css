@@ -597,4 +597,6 @@ button:hover {
   .userinfo{
     text-align: center;
   }
- 
+  a {
+    text-decoration: none;
+    }

@@ -105,7 +105,7 @@ async function displayContent() {
         // item.scores = getscores(item.title);
         div.appendChild(renderRating(item.scores))
         div.appendChild(details);
-        div.onclick = () => showDetails(item.title);
+        div.onclick = () => showDetails(item.title,item.modpackUrl);
         contentDiv.appendChild(div);
     }
     
@@ -167,7 +167,7 @@ function renderRating(scores) {
     ratingContainer.appendChild(scoreText);
     return ratingContainer;
 }
-async function showDetails(title) {
+async function showDetails(title,modpackUrl) {
     showLoading();
     try {
 
@@ -184,15 +184,29 @@ async function showDetails(title) {
             console.log(pl);
             li = document.createElement('li');
             li.innerHTML = `
-                <p class="userinfo"><strong>${element["是否名称敏感（必填）"]=="是"?maskString(element["你的玩家ID"]):element["你的玩家ID"]}</strong>
+                <p class="userinfo"><strong>🧑‍💼${element["是否名称敏感（必填）"]=="是"?maskString(element["你的玩家ID"]):element["你的玩家ID"]}</strong>
                 <strong class="userscore">${Number(element["你的评分（必填）"]).toFixed(1)}分</strong></p>
-                <p class="userinfo"><strong>${element["提交时间（自动）"]}</strong> </p><hr>
-                <div class="md"><strong>评论</strong>:${marked.parse(element["你的评论（必填）"].replace(/\n/g,'\n\n'))} </div>
+                <p class="userinfo"><strong>⏲️${element["提交时间（自动）"]}</strong> </p><hr>
+                <div class="md"><strong>🧾评论</strong>:${marked.parse(element["你的评论（必填）"].replace(/\n/g,'\n\n'))} </div>
             `
             ullist.appendChild(li);
         });
         
+        const urllist = document.createElement('ul');
+        urlli = document.createElement('li');
+        urlli.innerHTML = '<p>🔗相关链接：</p>'
+        modpackUrl.forEach(element => {
+            
+            urlli.innerHTML += `
+                <a href="${element.url}" target="_blank">
+                <img src="https://img.shields.io/badge/${element.urlName}-${title}-Green?logo=${element.urlName}" alt="${title}"></img>
+                </a>
+            `
+            
+        });
+        urllist.appendChild(urlli);
         modalContent.innerHTML = `<h1>${title}</h1>`
+        modalContent.appendChild(urllist);
         modalContent.appendChild(ullist);
         //info等待接入md
         modal.style.display = 'block'; 
