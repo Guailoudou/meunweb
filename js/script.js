@@ -69,7 +69,7 @@ async function fetchContent() {
 
 async function displayContent() {
     items = display_data
-    console.log(items)
+    // console.log(items)
     if (items.length === 0) {
         contentDiv.innerHTML = '<h1>暂无内容</h1>';
         return;
@@ -79,7 +79,7 @@ async function displayContent() {
         const div = document.createElement('div');
         div.className = `item vertical`;
         const img = document.createElement('img');
-        item.imgurl = item.imgurl || 'https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640';
+        item.imgurl = item.imgurl || './image/default.jpg';
         img.src = item.imgurl;
         div.appendChild(img);
         const details = document.createElement('div');
@@ -112,6 +112,15 @@ async function displayContent() {
     
 }
 function getcsvdata(items){
+    for(const item in csvdata){
+            // console.log(item)
+            if(item != 'undefined'){ //undefined
+                // console.log(item)
+                obj = {title: item,description: '暂无',imgurl: null,label:[],modpackUrl: []}
+                addplaymeun(items,obj)
+            }
+
+    }
     for (const item of items) {
         item.scores = getscores(item.title);
         // item.tags = gettags(item.title);
@@ -121,13 +130,14 @@ function getcsvdata(items){
             item.average_score = 0;
         }
     }
+    // console.log(items)
     return items;
 }
 function renderRating(scores) {
 
     
     const score = scores.reduce((acc, cur) => acc + cur, 0) / scores.length;
-    console.log(scores)
+    // console.log(scores)
     //四舍五入
     scoree = score.toFixed(0);
     const ratingContainer = document.createElement("div");
@@ -181,7 +191,7 @@ async function showDetails(title,modpackUrl) {
         
         csvdata[title].forEach(element => {
             pl =element["你的评论（必填）"].replace(/\n/g,'\n\n')
-            console.log(pl);
+            // console.log(pl);
             li = document.createElement('li');
             li.innerHTML = `
                 <p class="userinfo"><strong>🧑‍💼${element["是否名称敏感（必填）"]=="是"?maskString(element["你的玩家ID"]):element["你的玩家ID"]}</strong>
@@ -204,7 +214,10 @@ async function showDetails(title,modpackUrl) {
             `
             
         });
-        urllist.appendChild(urlli);
+        if(modpackUrl.length!=0&&modpackUrl!=null&&modpackUrl[0].urlName!=''){
+            urllist.appendChild(urlli);
+        }
+            
         modalContent.innerHTML = `<h1>${title}</h1>`
         modalContent.appendChild(urllist);
         modalContent.appendChild(ullist);

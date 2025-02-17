@@ -105,9 +105,7 @@ async function getcsv(texturl){
     Papa.parse(text, {
         header: true,
         complete: function(results) {
-          console.log("Parsed:", results.data);
           end = groupBy(results.data,"整合包名称（必填）")
-          console.log("Parsed:", end);
           
         }
       });
@@ -124,18 +122,29 @@ function getscores(title){
             return result;
         }
         for(let i=0;i<csvdata[title].length;i++){
-            // console.log(csvdata[title][i]["你的评分（必填）"]);
-            result.push(Number(csvdata[title][i]["你的评分"].trim()));
+            // console.log(title,csvdata[title][i]["你的评分"]);
+            if(csvdata[title][i]["你的评分"]!=undefined)
+                result.push(Number(csvdata[title][i]["你的评分"].trim()));
         }
-        console.log(result);
+//        console.log(result);
         return result;
     // });
 }
+//加入不重复内容
 function addUnique(array, element) {
     if (!array.includes(element)) {
       array.push(element);
     }
   }
+//
+function addplaymeun(array,element){
+    for(const key of array){
+        if(key.title==element.title){
+            return;
+        }
+    }
+    array.push(element);
+}
 function gettags(title){
     let result = [];
     if(csvdata[title]==undefined){
