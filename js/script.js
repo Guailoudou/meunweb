@@ -89,7 +89,6 @@ async function displayContent() {
         title.textContent = item.title;
         details.appendChild(title);
         const tags = document.createElement('div');
-        console.log(item.title,item.tags)
         if (item.tags.length == 0||item.tags[0] == '') {
             tags.className = 'userscore';
             tags.textContent = '暂无标签';
