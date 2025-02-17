@@ -195,7 +195,7 @@ async function showDetails(title,modpackUrl) {
             li = document.createElement('li');
             li.innerHTML = `
                 <p class="userinfo"><strong>🧑‍💼${element["是否名称敏感（必填）"]=="是"?maskString(element["你的玩家ID"]):element["你的玩家ID"]}</strong>
-                <strong class="userscore">${Number(element["你的评分"]).toFixed(1)}分</strong></p>
+                <strong class="userscore">${element["你的评分"]!=''?Number(element["你的评分"]).toFixed(1):'暂未评'}分</strong></p>
                 <p class="userinfo"><strong>⏲️${element["提交时间（自动）"]}</strong> </p><hr>
                 <div class="md"><strong>🧾评论</strong>:${marked.parse(element["你的评论（必填）"].replace(/\n/g,'\n\n'))} </div>
             `

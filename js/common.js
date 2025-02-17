@@ -122,8 +122,8 @@ function getscores(title){
             return result;
         }
         for(let i=0;i<csvdata[title].length;i++){
-            // console.log(title,csvdata[title][i]["你的评分"]);
-            if(csvdata[title][i]["你的评分"]!=undefined)
+            console.log(title,csvdata[title][i]["你的评分"]);
+            if(csvdata[title][i]["你的评分"]!=undefined&&csvdata[title][i]["你的评分"]!="")
                 result.push(Number(csvdata[title][i]["你的评分"].trim()));
         }
 //        console.log(result);
