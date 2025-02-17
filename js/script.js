@@ -89,7 +89,8 @@ async function displayContent() {
         title.textContent = item.title;
         details.appendChild(title);
         const tags = document.createElement('div');
-        if (item.tags.length == 0) {
+        console.log(item.title,item.tags)
+        if (item.tags.length == 0||item.tags[0] == '') {
             tags.className = 'userscore';
             tags.textContent = '暂无标签';
         }else{
@@ -116,7 +117,7 @@ function getcsvdata(items){
             // console.log(item)
             if(item != 'undefined'){ //undefined
                 // console.log(item)
-                obj = {title: item,description: '暂无',imgurl: null,label:[],modpackUrl: []}
+                obj = {title: item,description: '',imgurl: null,label:[],modpackUrl: []}
                 addplaymeun(items,obj)
             }
 
